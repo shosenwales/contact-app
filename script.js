@@ -17,7 +17,8 @@ let contact = {
     },
 };
 
-let enableDisableUser = (option) => {
+let enableDisableNameInput = (option) => {
+    let newname = document.getElementById('newname');
     if(option === 'enable')
         newname.disabled = false;
     else if (option === 'disable')
@@ -136,7 +137,7 @@ let refreshDOMTable = ()=>{
             newphone.value = contactToEdit.phone;
             newaddress.value = contactToEdit.address;
 
-            enableDisableUserInput('disable');
+            enableDisableNameInput('disable');
 
         })
      }
@@ -144,7 +145,7 @@ let refreshDOMTable = ()=>{
      for (let i = 0; i < deleteButton.length; i++){
          deleteButton[i].addEventListener('click', ($event) =>{
              let nameToDelete = $event.target.parentElement.children[0].innerText;
-             let isSure = window.confirm('you really want to delete' + naemeToDelete + '?');
+             let isSure = window.confirm('you really want to delete' + nameToDelete + '?');
              if(isSure)
              deleteUserfromtable(nameToDelete);
          })
