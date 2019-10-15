@@ -1,0 +1,98 @@
+body{
+    background: linear-gradient(to right, rgb(0, 0, 64), rgb(0, 0, 160));
+    color: white;
+    font-family: sans-serif;
+}
+
+h1{
+    margin-top: 20px;
+    font-size: 40px;
+    text-align: center;
+}
+.container{
+    margin-top: 20px;
+    font-size: 25px;
+    width:80%;
+    margin: auto; 
+}
+.row{
+    display: flex;
+}
+.column{
+    background: linear-gradient(to right, rgb(0, 0, 64), rgb(0, 0, 64));
+    padding: 10px;
+    margin: 2px;
+
+}
+.name{
+    flex-basis: 20%;
+}
+.phone{
+    flex-basis: 20%;
+}
+.address{
+    flex-basis: 20%;
+}
+.header{
+    background: linear-gradient(to right, rgb(0, 0, 64), rgb(0, 0, 64));
+    font-weight: bold;
+}
+.edit,.delete,.addnew{
+    flex-basis: 5%;
+    text-align: center;
+    cursor: pointer;
+}
+#newcontact{
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 99;
+    top: 50px;
+    position: absolute;
+    width:500px;
+    margin-left: calc(50% - 250px);
+}
+#newcontact input{
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 3px;
+    width: 100%;
+}
+.input-err{
+    background-color: red;
+}
+#background{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: gray;
+    z-index: 50;
+    top: 0;
+    left: 0;
+}
+#addbutton{
+    background-color: aqua;
+}
+#cancelbutton{
+    background-color: brown;
+}
+button{
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    float: right;
+    margin: 5px;
+    cursor: pointer;
+}
+button:hover{
+    padding: 13px;
+
+}
+.disable{
+    visibility: hidden;
+}
+.enable{
+    visibility: visible;
+}
+
+

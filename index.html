@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact List App</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    </head>
+    <body>
+       <h1>My Contact</h1>
+       <div class="container" id="contactcontainer">
+            <div class="row">
+                <div class="name column header">Name</div>
+                <div class="phone column header">Phone</div>
+                <div class="address column  header">Address</div>
+                <div class="addnew column header" id="addnew">+</div>
+            </div>
+            <span id="newentry"></span>
+       </div> 
+        <div class="disable" id="background"></div>
+        <div class="disable" id="newcontact">
+            <h1>New Contact</h1>
+
+            <label>Name</label>
+            <input type="text" id="newname">
+            <label>Phone</label>
+            <input type="text" id="newphone">
+            <label>Address</label>
+            <input type="text" id="newaddress">
+
+            <button id="addbutton">Add</button>
+            <button id="cancelbutton">Cancel</button>
+        </div>     
+        
+        <button id="clearbtn" style="position: absolute; right:0px">Clear Local Storage</button>
+        <script src="script.js"></script>
+    </body>
+</html>
