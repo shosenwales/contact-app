@@ -1,3 +1,4 @@
+
 const key = 'contact-key';
 
 let clearbtn = document.getElementById('clearbtn');
@@ -37,6 +38,14 @@ let refreshDOMTable = ()=>{
     newContact.id = 'newentry';
     contactListContainer.appendChild(newContact);
 
+    let addnewButton = document.getElementById('addnew');
+     let editButton = document.getElementsByClassName('edit');
+     let deleteButton = document.getElementsByClassName('delete');
+
+     let newContactaddButton = document.getElementById('addbutton');
+     let newContactcancelButton = document.getElementById('cancelbutton');
+
+
     for (let i = 0; i < contactTableKeys.length; i++){
         let currentRow = document.createElement('div');
         let currentNamecolumn = document.createElement('div');
@@ -52,9 +61,9 @@ let refreshDOMTable = ()=>{
        currentEditbutton.className = 'edit column';
        currentDeletebutton.className = 'delete column';
 
-       currentNamecolumn.innerHTML = contactTableKeys[i];
-       currentPhonecolumn.innerHTML = contactTable[contactTableKeys[i]].phone;
-       currentAddresscolumn.innerHTML = contactTable[contactTableKeys[i]].address;
+       currentNamecolumn.innerText = contactTableKeys[i];
+       currentPhonecolumn.innerText = contactTable[contactTableKeys[i]].phone;
+       currentAddresscolumn.innerText = contactTable[contactTableKeys[i]].address;
        currentEditbutton.innerHTML = '<i class="fas fa-user-edit"></i>';
        currentDeletebutton.innerHTML = '<i class="fas fa-user-times"></i>';
 
@@ -80,13 +89,7 @@ let refreshDOMTable = ()=>{
         newcontact.className =`${option}`;
         background.className = `${option}`;
     }
-     let addnewButton = document.getElementById('addnew');
-     let editButton = document.getElementsByClassName('edit');
-     let deleteButton = document.getElementsByClassName('delete');
-
-     let newContactaddButton = document.getElementById('addbutton');
-     let newContactcancelButton = document.getElementById('cancelbutton');
-
+     
      newContactaddButton.addEventListener('click', () =>{
             let newname = document.getElementById('newname').value.trim();
             let newphone = document.getElementById('newphone').value.trim();
@@ -137,7 +140,7 @@ let refreshDOMTable = ()=>{
             newphone.value = contactToEdit.phone;
             newaddress.value = contactToEdit.address;
 
-            enableDisableNameInput('disable');
+            enableDisableNameInput('enable');
 
         })
      }
@@ -156,7 +159,7 @@ let refreshDOMTable = ()=>{
      let deleteUserfromtable = (userName) => {
          let template = {};
          let contactTableKeys = Object.keys(contactTable);
-         for(let i = 0; i < contactTablKeys.length; i++){
+         for(let i = 0; i < contactTableKeys.length; i++){
              if(userName !==contactTableKeys[i]){
                  template[contactTableKeys[i]] = contactTable[contactTableKeys[i]];
              }
