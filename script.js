@@ -45,8 +45,7 @@ let refreshDOMTable = ()=>{
      let newContactaddButton = document.getElementById('addbutton');
      let newContactcancelButton = document.getElementById('cancelbutton');
 
-
-    for (let i = 0; i < contactTableKeys.length; i++){
+ for (let i = 0; i < contactTableKeys.length; i++){
         let currentRow = document.createElement('div');
         let currentNamecolumn = document.createElement('div');
         let currentAddresscolumn = document.createElement('div');
@@ -73,24 +72,25 @@ let refreshDOMTable = ()=>{
        currentRow.appendChild(currentEditbutton);
        currentRow.appendChild(currentDeletebutton);
        newContact.appendChild(currentRow);
-    }
+}
 
     let enableDisableUser = (option) => {
-        let newname = document.getElementById('newname');
-        let newphone = document.getElementById('newphone');
-        let newaddress = document.getElementById('newaddress');
-        newname.value ='';
-        newphone.value = '';
-        newaddress.value = '';
+            let newname = document.getElementById('newname');
+            let newphone = document.getElementById('newphone');
+            let newaddress = document.getElementById('newaddress');
+            newname.value ='';
+            newphone.value = '';
+            newaddress.value = '';
 
-        let newcontact = document.getElementById('newcontact');
-        let background = document.getElementById('background')
-        
-        newcontact.className =`${option}`;
-        background.className = `${option}`;
+            let newcontact = document.getElementById('newcontact');
+            let background = document.getElementById('background')
+            
+            newcontact.className =`${option}`;
+            background.className = `${option}`;
     }
      
-     newContactaddButton.addEventListener('click', () =>{
+    newContactaddButton.addEventListener('click', () =>{
+
             let newname = document.getElementById('newname').value.trim();
             let newphone = document.getElementById('newphone').value.trim();
             let newaddress = document.getElementById('newaddress').value.trim();
@@ -145,14 +145,14 @@ let refreshDOMTable = ()=>{
         })
      }
 
-     for (let i = 0; i < deleteButton.length; i++){
-         deleteButton[i].addEventListener('click', ($event) =>{
-             let nameToDelete = $event.target.parentElement.children[0].innerText;
-             let isSure = window.confirm('you really want to delete' + nameToDelete + '?');
-             if(isSure)
-             deleteUserfromtable(nameToDelete);
-         })
-     }
+ for (let i = 0; i < deleteButton.length; i++){
+            deleteButton[i].addEventListener('click', ($event) =>{
+                let nameToDelete = $event.target.parentElement.children[0].innerText;
+                let isSure = window.confirm('you really want to delete' + nameToDelete + '?');
+                if(isSure)
+                deleteUserfromtable(nameToDelete);
+            })
+        }
 
 }
 
