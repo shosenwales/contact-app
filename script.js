@@ -148,7 +148,7 @@ let refreshDOMTable = ()=>{
  for (let i = 0; i < deleteButton.length; i++){
             deleteButton[i].addEventListener('click', ($event) =>{
                 let nameToDelete = $event.target.parentElement.children[0].innerText;
-                let isSure = window.confirm('you really want to delete' + nameToDelete + '?');
+                let isSure = window.confirm('you really want to delete' + " " + nameToDelete + '?');
                 if(isSure)
                 deleteUserfromtable(nameToDelete);
             })
